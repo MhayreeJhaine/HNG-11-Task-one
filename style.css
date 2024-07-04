@@ -25,19 +25,45 @@ body {
 }
 
 .home-content h1 {
+  position: relative;
   font-size: 4em;
   font-weight: 700;
   font-style: italic;
   line-height: 1.2;
 }
 
+.home-content h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
 .home-content > a {
   color: #000;
   font-size: 18px;
+  position: relative;
 }
 
 .home-content > a:hover {
   color: #5364bb;
+}
+
+.home-content a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .home-content > .dateTime {
@@ -45,32 +71,77 @@ body {
   align-items: center;
   gap: 10px;
   margin-top: 5px;
+  position: relative;
 }
 
 .home-content > .dateTime i {
   font-size: 5px;
 }
 
-.home-content > h2 {
+.home-content > .dateTime::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.home-content > .goals h2 {
   font-size: 1.5em;
   margin-top: 10px;
+  position: relative;
+}
+
+.home-content > .goals h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.6s;
 }
 
 .home-content > .goals {
   font-size: 15px;
 }
 
-.links {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin-top: 50px;
-  align-items: center;
+.home-content > .goals p {
+  position: relative;
+  text-align: justify;
 }
 
-.links a {
+.home-content > .goals p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.9s;
+}
+
+.home > .links {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
   position: relative;
-  display: inline-flex;
+}
+
+.home > .links a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 10px;
   color: #000;
   text-decoration: none;
   font-size: 15px;
@@ -78,24 +149,63 @@ body {
   transition: all 0.3s ease;
 }
 
-.links a:hover {
+.home > .links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.home > .links a:hover {
   color: #5364bb;
   padding-left: 10px;
 }
 
-.links i {
+.home > .links i {
   font-size: 5px;
 }
 
-.image {
+.container > .image {
   height: 100svh;
   display: flex;
   align-items: center;
   padding: 50px;
+  background: transparent;
+  transition: 3s;
+  position: relative;
 }
 
-.image > img {
+.container > .image > img {
   max-width: 100%;
+}
+
+.container > .image:hover {
+  opacity: 0.7;
+}
+
+.container > .image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+  animation: showRight 1s ease forwards;
+  animation-delay: 3s;
+  z-index: 2;
+}
+
+/* Keyframes Animation */
+@keyframes showRight {
+  100% {
+    width: 0;
+  }
 }
 
 /* responsive screen */
